@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 public class FollowDetails {
     @Id
     private ObjectId followId;
-    private ObjectId follower;
-    private ObjectId following;
+    private ObjectId followerId;
+    private ObjectId followingId;
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt = LocalDateTime.now();
 
@@ -24,19 +24,19 @@ public class FollowDetails {
     }
 
     public ObjectId getFollower() {
-        return follower;
+        return followerId;
     }
 
-    public void setFollower(ObjectId follower) {
-        this.follower = follower;
+    public void setFollower(ObjectId followerId) {
+        this.followerId = followerId;
     }
 
     public ObjectId getFollowing() {
-        return following;
+        return followingId;
     }
 
-    public void setFollowing(ObjectId following) {
-        this.following = following;
+    public void setFollowing(ObjectId followingId) {
+        this.followingId = followingId;
     }
 
     public LocalDateTime getCreatedAt() {
