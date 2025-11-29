@@ -76,6 +76,17 @@ public class PublicServiceImpl implements PublicService {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
             }
 
+            // If password is empty or null, treat as resend OTP request
+            if (users.getPassword() == null || users.getPassword().isEmpty()) {
+                otpService.generateOtp(dbuser);
+                ApiResponse<String> apiResponse = new ApiResponse<>(
+                        200,
+                        "OTP resent to " + dbuser.getEmail(),
+                        null
+                );
+                return ResponseEntity.ok(apiResponse);
+            }
+
             // Check if password matches
             if (!passwordEncoder.matches(users.getPassword(), dbuser.getPassword())) {
                 ApiResponse<String> apiResponse = new ApiResponse<>(
