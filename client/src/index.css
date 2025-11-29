@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  * {
+    border-color: theme('colors.gray.300');
+  }
+  
+  html {
+    color-scheme: light;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+@layer components {
+  /* Modern rounded card component */
+  .card {
+    @apply bg-white border border-gray-200 rounded-2xl p-6 shadow-lg backdrop-blur-sm;
+  }
+  
+  /* Modern input styling */
+  .input {
+    @apply bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  /* Modern button styling */
+  .btn {
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  .btn-primary {
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500;
+  }
+  
+  /* Modern text area */
+  .textarea {
+    @apply bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none;
+  }
+  
+  /* Navigation link styling */
+  .nav-link {
+    @apply text-gray-600 hover:text-gray-900 transition-colors duration-200 rounded-lg px-3 py-2 hover:bg-gray-100;
+  }
+  
+  .nav-link.active {
+    @apply text-blue-600 bg-blue-50;
+  }
+}
+
+/* Typography updates for modern design */
+h1 {
+  @apply text-3xl font-semibold text-gray-900;
+}
+
+h2 {
+  @apply text-2xl font-semibold text-gray-900;
+}
+
+h3 {
+  @apply text-xl font-medium text-gray-800;
+}
+
+h4 {
+  @apply text-lg font-medium text-gray-800;
+}
+
+p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+/* Link styling */
+a {
+  @apply text-blue-600 hover:text-blue-700;
+}
+
+/* Simple and reliable selection styling */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: inherit;
+}
+
+/* Ensure multi-line headings display properly during selection */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  display: block;
+  overflow: visible;
+}
+
+/* Prevent any pseudo-elements from interfering */
+h1::before, h1::after,
+h2::before, h2::after,
+h3::before, h3::after,
+h4::before, h4::after,
+h5::before, h5::after,
+h6::before, h6::after {
+  display: none;
+}
+
+/* Specific fix for blog title selection issues */
+.blog-title {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: block;
+  width: 100%;
+  line-height: 1.2;
+}
+
+.blog-title::selection {
+  background: rgba(37, 99, 235, 0.2) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.blog-title::-moz-selection {
+  background: rgba(37, 99, 235, 0.2) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}

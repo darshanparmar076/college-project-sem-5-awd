@@ -1,0 +1,206 @@
+/* Custom styles for TipTap Editor - Theme Aware */
+
+/* Blockquote styling to match the design */
+.ProseMirror blockquote {
+  border-left: 4px solid #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  margin: 1rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.5rem !important;
+  color: #374151 !important;
+  font-style: italic;
+}
+
+.dark .ProseMirror blockquote {
+  color: #e5e7eb !important;
+}
+
+.ProseMirror blockquote p {
+  margin: 0 !important;
+  color: #374151 !important;
+}
+
+.dark .ProseMirror blockquote p {
+  color: #e5e7eb !important;
+}
+
+/* Code block styling */
+.ProseMirror pre {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+  overflow-x: auto;
+}
+
+.dark .ProseMirror pre {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+.ProseMirror pre code {
+  background: none !important;
+  color: inherit !important;
+  font-size: 0.875rem !important;
+  padding: 0 !important;
+}
+
+/* Inline code styling */
+.ProseMirror code {
+  background-color: #f3f4f6 !important;
+  color: #3b82f6 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875rem !important;
+}
+
+.dark .ProseMirror code {
+  background-color: #374151 !important;
+  color: #60a5fa !important;
+}
+
+/* Heading styles */
+.ProseMirror h1 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin: 1.5rem 0 1rem 0 !important;
+}
+
+.dark .ProseMirror h1 {
+  color: #f3f4f6 !important;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 1.25rem 0 0.75rem 0 !important;
+}
+
+.dark .ProseMirror h2 {
+  color: #f3f4f6 !important;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 1rem 0 0.5rem 0 !important;
+}
+
+.dark .ProseMirror h3 {
+  color: #f3f4f6 !important;
+}
+
+/* List styling */
+.ProseMirror ul, .ProseMirror ol {
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+  color: #374151 !important;
+}
+
+.dark .ProseMirror ul, .dark .ProseMirror ol {
+  color: #e5e7eb !important;
+}
+
+.ProseMirror li {
+  margin: 0.25rem 0 !important;
+  color: #374151 !important;
+}
+
+.dark .ProseMirror li {
+  color: #e5e7eb !important;
+}
+
+/* Link styling */
+.ProseMirror a {
+  color: #3b82f6 !important;
+  text-decoration: underline !important;
+}
+
+.dark .ProseMirror a {
+  color: #60a5fa !important;
+}
+
+.ProseMirror a:hover {
+  color: #1d4ed8 !important;
+}
+
+.dark .ProseMirror a:hover {
+  color: #93c5fd !important;
+}
+
+/* Paragraph styling */
+.ProseMirror p {
+  margin: 0.5rem 0 !important;
+  color: #374151 !important;
+  line-height: 1.6 !important;
+}
+
+.dark .ProseMirror p {
+  color: #e5e7eb !important;
+}
+
+/* Image styling */
+.ProseMirror img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.75rem !important;
+  margin: 1rem auto !important;
+  display: block !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Placeholder styling */
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #6b7280 !important;
+  content: attr(data-placeholder) !important;
+  float: left !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+.dark .ProseMirror p.is-editor-empty:first-child::before {
+  color: #9ca3af !important;
+}
+
+/* Focus styling */
+.ProseMirror:focus {
+  outline: none !important;
+}
+
+/* Selection styling */
+.ProseMirror ::selection {
+  background-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Table styling (if you add table support later) */
+.ProseMirror table {
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+  width: 100% !important;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #d1d5db !important;
+  padding: 0.5rem !important;
+  color: #374151 !important;
+}
+
+.dark .ProseMirror table td,
+.dark .ProseMirror table th {
+  border: 1px solid #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.ProseMirror table th {
+  background-color: #f9fafb !important;
+  font-weight: 600 !important;
+}
+
+.dark .ProseMirror table th {
+  background-color: #374151 !important;
+}
