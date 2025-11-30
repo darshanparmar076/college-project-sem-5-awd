@@ -54,7 +54,7 @@ public class FollowServiceImpl implements FollowService {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
             }
 
-            boolean isAlreadyFollowing = followRepository.existsByFollowerAndFollowing(currentUser.getId(), targetUser.getId());
+            boolean isAlreadyFollowing = followRepository.existsByFollowerIdAndFollowingId(currentUser.getId(), targetUser.getId());
 
             if (isAlreadyFollowing){
                 ApiResponse apiResponse = new ApiResponse<>(
@@ -67,8 +67,8 @@ public class FollowServiceImpl implements FollowService {
             }
 
             FollowDetails followDetails = new FollowDetails();
-            followDetails.setFollower(currentUser.getId());
-            followDetails.setFollowing(targetUser.getId());
+            followDetails.setFollowerId(currentUser.getId());
+            followDetails.setFollowingId(targetUser.getId());
             followRepository.save(followDetails);
 
             ApiResponse apiResponse = new ApiResponse<>(
@@ -144,7 +144,7 @@ public class FollowServiceImpl implements FollowService {
                 return ResponseEntity.badRequest().body(apiResponse);
             }
 
-            FollowDetails followDetails = followRepository.findByFollowerAndFollowing(loggedInUser.getId(), followedUser.getId());
+            FollowDetails followDetails = followRepository.findByFollowerIdAndFollowingId(loggedInUser.getId(), followedUser.getId());
 
             if (followDetails == null){
                 ApiResponse apiResponse = new ApiResponse<>(

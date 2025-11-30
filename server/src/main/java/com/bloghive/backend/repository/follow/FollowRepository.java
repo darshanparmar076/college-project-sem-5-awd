@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FollowRepository extends MongoRepository<FollowDetails, ObjectId> {
-    long countByFollowing(ObjectId id);
+    long countByFollowingId(ObjectId id);
 
-    long countByFollower(ObjectId id);
+    long countByFollowerId(ObjectId id);
 
-    boolean existsByFollowerAndFollowing(ObjectId loggedInUserId, ObjectId id);
+    boolean existsByFollowerIdAndFollowingId(ObjectId loggedInUserId, ObjectId id);
 
-    FollowDetails findByFollowerAndFollowing(ObjectId id, ObjectId id1);
+    FollowDetails findByFollowerIdAndFollowingId(ObjectId id, ObjectId id1);
 }

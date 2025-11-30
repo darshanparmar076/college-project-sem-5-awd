@@ -23,19 +23,19 @@ public class FollowDetails {
         this.followId = followId;
     }
 
-    public ObjectId getFollower() {
+    public ObjectId getFollowerId() {
         return followerId;
     }
 
-    public void setFollower(ObjectId followerId) {
+    public void setFollowerId(ObjectId followerId) {
         this.followerId = followerId;
     }
 
-    public ObjectId getFollowing() {
+    public ObjectId getFollowingId() {
         return followingId;
     }
 
-    public void setFollowing(ObjectId followingId) {
+    public void setFollowingId(ObjectId followingId) {
         this.followingId = followingId;
     }
 

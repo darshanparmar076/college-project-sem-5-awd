@@ -305,8 +305,8 @@ public class UserServiceImpl implements UserService {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
             }
 
-            long followersCount = followRepository.countByFollowing(targetUser.getId());
-            long followingCount = followRepository.countByFollower(targetUser.getId());
+            long followersCount = followRepository.countByFollowingId(targetUser.getId());
+            long followingCount = followRepository.countByFollowerId(targetUser.getId());
 
             long posts = blogRepository.countByUserId(targetUser.getId());
 
@@ -320,7 +320,7 @@ public class UserServiceImpl implements UserService {
                 User loggedInUser = usersRepository.findById(loggedInUserId)
                         .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + loggedInUserId));
                 if(loggedInUser != null) {
-                    boolean isFollow = followRepository.existsByFollowerAndFollowing(loggedInUser.getId(), targetUser.getId());
+                    boolean isFollow = followRepository.existsByFollowerIdAndFollowingId(loggedInUser.getId(), targetUser.getId());
                     if (isFollow){
                         isFollowing = true;
                     }
