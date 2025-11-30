@@ -18,7 +18,7 @@ function Header() {
   ];
 
   return (
-    <header className="sticky top-6 z-50 mt-6">
+    <header className="sticky top-6 z-50">
       <Container>
         <nav className="flex items-center justify-between rounded-2xl border backdrop-blur-xl shadow-xl transition-colors duration-300 p-4 px-6 border-gray-300/50 bg-white/90">
           {/* Logo */}

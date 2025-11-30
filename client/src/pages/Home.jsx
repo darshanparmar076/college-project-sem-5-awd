@@ -77,7 +77,7 @@ const Home = () => {
     "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-24">
@@ -201,7 +201,7 @@ const Home = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="relative my-20 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-24 text-white shadow-xl">
+        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-24 text-white shadow-xl">
           <div className="bg-pattern absolute inset-0 opacity-10"></div>
           <div className="relative mx-auto max-w-3xl px-4 text-center">
             <div className="animate-float">
