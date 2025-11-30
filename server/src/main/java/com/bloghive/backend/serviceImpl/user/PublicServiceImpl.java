@@ -41,7 +41,7 @@ public class PublicServiceImpl implements PublicService {
             user.setCreatedAt(LocalDateTime.now());
             user.setUpdatedAt(LocalDateTime.now());
             user.setActive(false);
-            user.setRole("USER");
+//            user.setRole("USER");
             user.setAvtar("https://res.cloudinary.com/dpw1lvfiw/image/upload/v1764246775/Untitled_design_ruzuck.png");
             otpService.generateOtp(user);
             User save = usersRepository.save(user);

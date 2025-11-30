@@ -12,7 +12,6 @@ public class UserProfileResponseDTO {
     private String email;
     private String gender;
     private String avtar;
-    private String role;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private long followers;
@@ -68,14 +67,6 @@ public class UserProfileResponseDTO {
 
     public void setAvtar(String avtar) {
         this.avtar = avtar;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public LocalDateTime getCreatedAt() {

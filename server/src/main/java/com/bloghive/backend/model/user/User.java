@@ -22,7 +22,6 @@ public class User {
     private String password;
     private String gender;
     private String avtar;
-//    private String role;
 
     private String resetToken;
     private LocalDateTime resetTokenExpiration;
@@ -91,14 +90,6 @@ public class User {
     public void setAvtar(String avtar) {
         this.avtar = avtar;
     }
-
-//    public String getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(String role) {
-//        this.role = role;
-//    }
 
     public String getResetToken() {
         return resetToken;

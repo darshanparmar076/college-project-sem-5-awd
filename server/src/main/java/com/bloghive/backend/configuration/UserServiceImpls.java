@@ -33,7 +33,7 @@ public class UserServiceImpls implements UserDetailsService {
 //                    .username(user.getUserName())
                     .username(user.getId().toString())
                     .password(user.getPassword())
-                    .roles(user.getRole())
+                    .roles("USER")
                     .build();
         }
 

@@ -337,7 +337,6 @@ public class UserServiceImpl implements UserService {
             userProfileResponseDTO.setEmail(targetUser.getEmail());
             userProfileResponseDTO.setGender(targetUser.getGender());
             userProfileResponseDTO.setAvtar(targetUser.getAvtar());
-            userProfileResponseDTO.setRole(targetUser.getRole());
             userProfileResponseDTO.setCreatedAt(targetUser.getCreatedAt());
             userProfileResponseDTO.setUpdatedAt(targetUser.getUpdatedAt());
             userProfileResponseDTO.setFollowers(followersCount);
