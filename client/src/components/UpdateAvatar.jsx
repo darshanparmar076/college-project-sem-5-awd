@@ -57,7 +57,7 @@ function UpdateAvatar({ userData, setUserData }) {
         // Update Redux state with new user data from response.data
         dispatch(login(response.data));
         setUserData(response.data);
-        
+
         toast.success(response.message || "Avatar updated successfully.", {
           id: updateAvatarToast,
         });
@@ -88,7 +88,10 @@ function UpdateAvatar({ userData, setUserData }) {
       <div className="flex flex-col items-center space-y-4">
         <img
           className="size-40 rounded-xl object-cover ring-4 ring-gray-300 transition-all duration-300"
-          src={userData?.avtar || 'https://res.cloudinary.com/dpw1lvfiw/image/upload/v1756907093/Untitled_design_3_orpt7o.png'}
+          src={
+            userData?.avtar ||
+            "https://res.cloudinary.com/dpw1lvfiw/image/upload/v1756907093/Untitled_design_3_orpt7o.png"
+          }
           alt="Profile"
         />
 

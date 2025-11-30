@@ -77,7 +77,7 @@ const Home = () => {
     "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60";
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen  pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-24">
@@ -93,7 +93,9 @@ const Home = () => {
                 Create, publish, and grow your blog with our powerful platform
               </p>
               <button className="group flex items-center space-x-2 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25">
-                <Link to={"/blogs"} className="text-white">Get Started</Link>
+                <Link to={"/blogs"} className="text-white">
+                  Get Started
+                </Link>
                 <ArrowRight className="h-5 w-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
@@ -166,10 +168,7 @@ const Home = () => {
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="card overflow-hidden"
-                >
+                <div key={index} className="card overflow-hidden">
                   <button
                     onClick={() =>
                       setActiveIndex(activeIndex === index ? null : index)
