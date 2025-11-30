@@ -13,21 +13,23 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const userId = localStorage.getItem("userId");
-    
+
     if (!token) {
       dispatch(logout());
       setLoading(false);
       return;
     }
-    
+
     getLogedInUser()
       .then((response) => {
         if (response.statusCode === 200) {
-          dispatch(login({
-            user: response.data,
-            userId: userId,
-            token: token
-          }));
+          dispatch(
+            login({
+              user: response.data,
+              userId: userId,
+              token: token,
+            })
+          );
         } else {
           dispatch(logout());
         }
@@ -41,7 +43,7 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen  pb-20">
       <Header />
       <main>
         <Outlet />
