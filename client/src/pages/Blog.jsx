@@ -24,7 +24,7 @@ function Blog() {
     })();
   }, []);
   return (
-    <div>
+    <div className="mt-14">
       <Container>
         {loading ? (
           <Loader />

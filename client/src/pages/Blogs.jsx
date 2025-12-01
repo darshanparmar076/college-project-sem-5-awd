@@ -19,7 +19,7 @@ function Blogs() {
 
   return (
     <>
-      <div className="mt-8 min-h-screen">
+      <div className="mt-14 min-h-screen">
         <Container>
           {loading ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

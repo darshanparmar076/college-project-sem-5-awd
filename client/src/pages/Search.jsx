@@ -31,14 +31,14 @@ const Search = () => {
   }, [debouncedSearch]);
 
   return (
-    <div className="mt-8 min-h-screen">
+    <div className="mt-14 min-h-screen">
       <Container>
         <div className="flex flex-col space-y-8">
           <div className="mx-auto w-full max-w-3xl">
             <div className="flex flex-col gap-3">
               <label
                 htmlFor="search"
-                className="text-lg font-medium text-gray-800"
+                className="text-lg font-bold text-gray-800"
               >
                 Search Posts
               </label>
@@ -47,7 +47,7 @@ const Search = () => {
                 type={"text"}
                 value={query}
                 className="input text-lg"
-                placeholder="Search for posts..."
+                placeholder="Search for posts"
               />
             </div>
           </div>
