@@ -55,17 +55,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Get frontend URL from environment variable, fallback to localhost for development
-        String frontendUrl = System.getenv("FRONTEND_URL");
-        if (frontendUrl != null && !frontendUrl.isEmpty()) {
-            configuration.setAllowedOriginPatterns(Arrays.asList(
-                "http://localhost:*", 
-                "http://127.0.0.1:*",
-                frontendUrl
-            ));
-        } else {
-            configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:*", "http://127.0.0.1:*"));
-        }
+        // Allow localhost and production Vercel URL
+        configuration.setAllowedOriginPatterns(Arrays.asList(
+            "http://localhost:*", 
+            "http://127.0.0.1:*",
+            "https://college-project-sem-5-awd.vercel.app"
+        ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
