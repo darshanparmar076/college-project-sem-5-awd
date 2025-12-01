@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BlogForm } from "../components/index";
+import { BlogForm, Loader } from "../components/index";
 import { getPost } from "../api";
 
 function EditPost() {
@@ -15,14 +15,14 @@ function EditPost() {
         setBlogData(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching blog data:', error);
+        console.error("Error fetching blog data:", error);
       })
       .finally(() => setLoading(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <Loader />;
   }
 
   return <BlogForm blogData={blogData} />;
