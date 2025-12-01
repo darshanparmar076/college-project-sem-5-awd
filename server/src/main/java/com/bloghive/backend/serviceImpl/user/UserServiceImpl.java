@@ -327,8 +327,6 @@ public class UserServiceImpl implements UserService {
                 }
             }
 
-            System.out.println(isFollowing);
-
             UserProfileResponseDTO userProfileResponseDTO = new UserProfileResponseDTO();
 
             userProfileResponseDTO.setUserId(targetUser.getId());

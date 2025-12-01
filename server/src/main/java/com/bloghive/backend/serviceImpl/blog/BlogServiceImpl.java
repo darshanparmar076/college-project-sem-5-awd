@@ -52,7 +52,6 @@ public class BlogServiceImpl implements BlogService {
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String userId = authentication.getName();
-            System.out.println(userId);
             ObjectId objectId = new ObjectId(userId);
             User user = usersRepository.findById(objectId)
                     .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
