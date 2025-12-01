@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_SERVER_URL,
-  timeout: 120000, // 2 minutes for Render free tier wake-up
+  timeout: 60000, // 1 minute for Render free tier wake-up
   withCredentials: true,
 });
 
