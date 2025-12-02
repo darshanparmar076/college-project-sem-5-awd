@@ -75,4 +75,9 @@ public class PublicController {
     public ResponseEntity<?> getBlogComments(@PathVariable ObjectId blogId){
         return commentService.getBlogComments(blogId);
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<?> healthCheck(){
+        return ResponseEntity.ok("BlogHive is up and running!");
+    }
 }
