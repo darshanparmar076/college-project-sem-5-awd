@@ -20,21 +20,28 @@ public class EmailService {
     public void otpSenderMail(User user, String otp){
         try {
             System.out.println(otp);
-            String msg = "Hello "+ user.getUserName()+",\n" +
-                    "\n" +
-                    "Your Email id : "+ user.getEmail()+"\n"+
-                    "Your OTP code is : "+otp+" \n" +
-                    "This code is valid for the next 10 minutes.\n" +
-                    "\n" +
-                    "Please do not share this code with anyone for your security.\n" +
-                    "\n" +
-                    "Thank you,\n" +
-                    "Team BlogHive App";
+            String msg = "Hello " + user.getUserName() + ",\n\n" +
+                    "We received a request to verify your email address for BlogHive.\n\n" +
+                    "To proceed, please use the OTP code below:\n\n" +
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+                    "    Your OTP Code: " + otp + "\n" +
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+                    "⏰ This code will expire in 5 minutes.\n\n" +
+                    "📧 Email: " + user.getEmail() + "\n\n" +
+                    "🔒 Security Tips:\n" +
+                    "• Do not share this code with anyone\n" +
+                    "• BlogHive will never ask for your OTP via phone or email\n" +
+                    "• If you didn't request this code, please ignore this email\n\n" +
+                    "Need help? Contact us at support@bloghive.com\n\n" +
+                    "Best regards,\n" +
+                    "The BlogHive Team\n\n" +
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+                    "© 2025 BlogHive. All rights reserved.";
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message,true);
             mimeMessageHelper.setFrom(fromEmail);
             mimeMessageHelper.setTo(user.getEmail());
-            mimeMessageHelper.setSubject("Otp Verification");
+            mimeMessageHelper.setSubject("OTP Verification - BlogHive");
             mimeMessageHelper.setText(msg);
             javaMailSender.send(message);
         }
